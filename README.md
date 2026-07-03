@@ -50,6 +50,10 @@ Vercel supports SPAs automatically for front-end frameworks. Just deploy the rep
 
 A GitHub Actions workflow has been added at `.github/workflows/deploy-pages.yml` to build the site and deploy the `dist/` output to GitHub Pages on pushes to `main`.
 
+> Note: Because this repository is private and GitHub Pages is not yet configured, the workflow uses a repository secret named `PAGES_DEPLOY_TOKEN`.
+>
+> Create a personal access token with `repo` and `pages:write` permissions, then add it to the repository secrets under `PAGES_DEPLOY_TOKEN`.
+>
 When the workflow completes, your site will be published at `https://apnagharjankari-hub.github.io/apnagharjankari/` unless a custom domain is configured.
 
 ## Project structure
