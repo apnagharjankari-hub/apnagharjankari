@@ -5,14 +5,18 @@ on:
     branches:
       - main
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,23 +25,26 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build production site
         run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: actions/configure-pages@v4
-        with:
-          enablement: 'github-pages'
-          token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
 
-      - name: Publish Pages
-        uses: actions/deploy-pages@v2
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
