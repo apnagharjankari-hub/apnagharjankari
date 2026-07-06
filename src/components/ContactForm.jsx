@@ -1,108 +1,70 @@
-import { useState } from 'react'
+import { HiEnvelope, HiPhone, HiMapPin } from 'react-icons/hi2'
 
 export default function ContactForm() {
-  const [values, setValues] = useState({
-    name: '',
-    mobile: '',
-    location: '',
-    propertyType: '',
-    budget: '',
-    message: '',
-  })
-  const [status, setStatus] = useState('')
-
-  const handleChange = (event) => {
-    const { name, value } = event.target
-    setValues((previous) => ({ ...previous, [name]: value }))
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    setStatus('Thank you! We will contact you soon with property details.')
-    setValues({
-      name: '',
-      mobile: '',
-      location: '',
-      propertyType: '',
-      budget: '',
-      message: '',
-    })
-  }
-
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
-      <label>
-        Full Name
-        <input
-          name="name"
-          value={values.name}
-          onChange={handleChange}
-          placeholder="Your full name"
-          required
-        />
-      </label>
-      <label>
-        Mobile Number
-        <input
-          name="mobile"
-          value={values.mobile}
-          onChange={handleChange}
-          placeholder="8448844840"
-          required
-        />
-      </label>
-      <label>
-        Preferred Location
-        <input
-          name="location"
-          value={values.location}
-          onChange={handleChange}
-          placeholder="Uttam Nagar, Dwarka, etc."
-        />
-      </label>
-      <label>
-        Property Type
-        <select
-          name="propertyType"
-          value={values.propertyType}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select a property type</option>
-          <option value="1 BHK Flats">1 BHK Flats</option>
-          <option value="2 BHK Flats">2 BHK Flats</option>
-          <option value="3 BHK Flats">3 BHK Flats</option>
-          <option value="Builder Floors">Builder Floors</option>
-          <option value="Independent Houses">Independent Houses</option>
-          <option value="Residential Plots">Residential Plots</option>
-          <option value="Ready-to-Move Properties">Ready-to-Move Properties</option>
-          <option value="Under-Construction Projects">Under-Construction Projects</option>
-        </select>
-      </label>
-      <label>
-        Budget
-        <input
-          name="budget"
-          value={values.budget}
-          onChange={handleChange}
-          placeholder="e.g. ₹50 Lakhs - ₹1 Cr"
-        />
-      </label>
-      <label>
-        Message
-        <textarea
-          name="message"
-          value={values.message}
-          onChange={handleChange}
-          placeholder="Tell us more about your requirements"
-          rows="5"
-        />
-      </label>
-
-      <button type="submit" className="button button-primary">
-        Get Property Details
-      </button>
-      {status && <p className="status-message">{status}</p>}
-    </form>
+    <section className='rounded-[2rem] border border-slate-200 bg-white/95 p-8 shadow-lg shadow-slate-900/5'>
+      <div className='grid gap-10 lg:grid-cols-[0.95fr_0.85fr]'>
+        <div>
+          <p className='text-sm font-semibold uppercase tracking-[0.32em] text-orange-500'>Get in touch</p>
+          <h2 className='mt-4 text-3xl font-semibold text-slate-950'>Speak with our property experts</h2>
+          <p className='mt-5 max-w-xl text-base leading-8 text-slate-600'>Have a question about listings or want a personalized property search? Send us a message and our local team will respond within 24 hours.</p>
+          <div className='mt-10 space-y-4 rounded-[2rem] bg-slate-50 p-6'>
+            <div className='flex items-center gap-4 text-slate-700'>
+              <HiMapPin className='h-6 w-6 text-orange-500' />
+              <div>
+                <p className='text-sm font-semibold'>Service areas</p>
+                <p className='text-sm text-slate-500'>Uttam Nagar • Dwarka • Delhi</p>
+              </div>
+            </div>
+            <div className='flex items-center gap-4 text-slate-700'>
+              <HiPhone className='h-6 w-6 text-orange-500' />
+              <div>
+                <p className='text-sm font-semibold'>Call us</p>
+                <p className='text-sm text-slate-500'>+91 84488 44840</p>
+              </div>
+            </div>
+            <div className='flex items-center gap-4 text-slate-700'>
+              <HiEnvelope className='h-6 w-6 text-orange-500' />
+              <div>
+                <p className='text-sm font-semibold'>Email</p>
+                <p className='text-sm text-slate-500'>contact@apnagharjankari.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form className='space-y-5 rounded-[2rem] border border-slate-200 bg-slate-50 p-6'>
+          <div className='grid gap-5 sm:grid-cols-2'>
+            <label className='block'>
+              <span className='mb-2 block text-sm font-medium text-slate-700'>Name</span>
+              <input type='text' className='w-full rounded-3xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100' placeholder='Your Name' />
+            </label>
+            <label className='block'>
+              <span className='mb-2 block text-sm font-medium text-slate-700'>Phone</span>
+              <input type='tel' className='w-full rounded-3xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100' placeholder='+91 91234 56789' />
+            </label>
+          </div>
+          <div className='grid gap-5 sm:grid-cols-2'>
+            <label className='block'>
+              <span className='mb-2 block text-sm font-medium text-slate-700'>Email</span>
+              <input type='email' className='w-full rounded-3xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100' placeholder='hello@example.com' />
+            </label>
+            <label className='block'>
+              <span className='mb-2 block text-sm font-medium text-slate-700'>Property Type</span>
+              <select className='w-full rounded-3xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100'>
+                <option>Any type</option>
+                <option>Flat</option>
+                <option>Builder floor</option>
+                <option>Plot</option>
+              </select>
+            </label>
+          </div>
+          <label className='block'>
+            <span className='mb-2 block text-sm font-medium text-slate-700'>Message</span>
+            <textarea rows='4' className='w-full rounded-3xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100' placeholder='Tell us what you are looking for...' />
+          </label>
+          <button type='submit' className='w-full rounded-full bg-orange-500 px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition hover:bg-orange-400'>Send Message</button>
+        </form>
+      </div>
+    </section>
   )
 }
