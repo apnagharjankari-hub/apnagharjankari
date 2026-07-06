@@ -31,16 +31,16 @@ export default function Footer() {
             <div className='space-y-4'>
               <h3 className='text-sm font-semibold uppercase tracking-[0.32em] text-slate-500'>Quick links</h3>
               <div className='grid gap-3 text-sm text-slate-400'>
-                <a href={import.meta.env.BASE_URL} className='inline-flex items-center gap-2 hover:text-white'>
+                <a href='/' className='inline-flex items-center gap-2 hover:text-white'>
                   <HiArrowRight className='h-4 w-4 text-orange-500' /> Home
                 </a>
-                <a href={`${import.meta.env.BASE_URL}properties`} className='inline-flex items-center gap-2 hover:text-white'>
+                <a href='/properties' className='inline-flex items-center gap-2 hover:text-white'>
                   <HiArrowRight className='h-4 w-4 text-orange-500' /> Properties
                 </a>
-                <a href={`${import.meta.env.BASE_URL}about`} className='inline-flex items-center gap-2 hover:text-white'>
+                <a href='/about' className='inline-flex items-center gap-2 hover:text-white'>
                   <HiArrowRight className='h-4 w-4 text-orange-500' /> About
                 </a>
-                <a href={`${import.meta.env.BASE_URL}contact`} className='inline-flex items-center gap-2 hover:text-white'>
+                <a href='/contact' className='inline-flex items-center gap-2 hover:text-white'>
                   <HiArrowRight className='h-4 w-4 text-orange-500' /> Contact
                 </a>
               </div>

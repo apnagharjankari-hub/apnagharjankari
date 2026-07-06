@@ -18,10 +18,10 @@ export default function Hero() {
             <p className='max-w-2xl text-base text-slate-200 sm:text-lg'>Browse verified properties, get home loan guidance, and book expert consultations for your next move in Delhi.</p>
           </div>
           <div className='grid gap-4 sm:grid-cols-2'>
-            <a href={`${import.meta.env.BASE_URL}properties`} className='inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:bg-orange-400'>
+            <a href='/properties' className='inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:bg-orange-400'>
               Explore Properties
             </a>
-            <a href={`${import.meta.env.BASE_URL}contact`} className='inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20'>
+            <a href='/contact' className='inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20'>
               Get Consultation
             </a>
           </div>

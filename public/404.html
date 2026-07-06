@@ -5,8 +5,7 @@
     <title>Redirecting…</title>
     <script>
       const path = window.location.pathname + window.location.search + window.location.hash;
-      const basePath = '/apnagharjankari';
-      const redirect = basePath + '/?p=' + encodeURIComponent(path);
+      const redirect = '/?p=' + encodeURIComponent(path);
       window.location.replace(redirect);
     </script>
   </head>
