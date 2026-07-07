@@ -20,11 +20,11 @@ export default function Footer() {
                 </div>
                 <div className='flex items-start gap-3'>
                   <HiPhone className='mt-1 h-5 w-5 text-orange-500' />
-                  <span>+91 84488 44840</span>
+                  <a href='tel:+918448844840' className='transition hover:text-white'>+91 84488 44840</a>
                 </div>
                 <div className='flex items-start gap-3'>
                   <HiEnvelope className='mt-1 h-5 w-5 text-orange-500' />
-                  <span>contact@apnagharjankari.com</span>
+                  <a href='mailto:apnagharjankari@gmail.com' className='transition hover:text-white'>apnagharjankari@gmail.com</a>
                 </div>
               </div>
             </div>

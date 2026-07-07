@@ -20,14 +20,14 @@ export default function ContactForm() {
               <HiPhone className='h-6 w-6 text-orange-500' />
               <div>
                 <p className='text-sm font-semibold'>Call us</p>
-                <p className='text-sm text-slate-500'>+91 84488 44840</p>
+                <a href='tel:+918448844840' className='text-sm text-slate-500 transition hover:text-orange-500'>+91 84488 44840</a>
               </div>
             </div>
             <div className='flex items-center gap-4 text-slate-700'>
               <HiEnvelope className='h-6 w-6 text-orange-500' />
               <div>
                 <p className='text-sm font-semibold'>Email</p>
-                <p className='text-sm text-slate-500'>contact@apnagharjankari.com</p>
+                <a href='mailto:apnagharjankari@gmail.com' className='text-sm text-slate-500 transition hover:text-orange-500'>apnagharjankari@gmail.com</a>
               </div>
             </div>
           </div>
